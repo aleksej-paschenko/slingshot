@@ -1,4 +1,6 @@
-table! {
+// @generated automatically by Diesel CLI.
+
+diesel::table! {
     account_records (owner_id, alias) {
         owner_id -> Text,
         alias -> Text,
@@ -7,7 +9,7 @@ table! {
     }
 }
 
-table! {
+diesel::table! {
     asset_records (owner_id, alias) {
         owner_id -> Text,
         alias -> Text,
@@ -16,7 +18,7 @@ table! {
     }
 }
 
-table! {
+diesel::table! {
     block_records (height) {
         height -> Integer,
         header_json -> Text,
@@ -26,7 +28,7 @@ table! {
     }
 }
 
-table! {
+diesel::table! {
     user_records (id) {
         id -> Text,
         seed -> Text,
@@ -34,4 +36,9 @@ table! {
     }
 }
 
-allow_tables_to_appear_in_same_query!(account_records, asset_records, block_records, user_records,);
+diesel::allow_tables_to_appear_in_same_query!(
+    account_records,
+    asset_records,
+    block_records,
+    user_records,
+);
